@@ -2,10 +2,11 @@ source "https://rubygems.org"
 
 ruby "3.3.0.preview2"
 
-gem "rails", github: "rails/rails", branch: "main"
+gem "rails", "~> 7.0.0"
 gem "pg", "~> 1.5"
 gem "puma", "~> 6.4"
 
+gem "activerecord-postgis-adapter", "~> 8"
 gem "dry-inflector", "~> 1.0"
 gem "dry-transformer", "~> 1.0"
 
