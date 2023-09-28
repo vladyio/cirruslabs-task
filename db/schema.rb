@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_28_104720) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_28_130854) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "postgis"
+
+  create_table "excavators", force: :cascade do |t|
+    t.bigint "ticket_id"
+    t.string "company_name", null: false
+    t.string "address", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ticket_id"], name: "index_excavators_on_ticket_id"
+  end
 
   create_table "tickets", force: :cascade do |t|
     t.string "request_number", null: false
@@ -28,4 +37,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_28_104720) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "excavators", "tickets"
 end

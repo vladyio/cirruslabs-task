@@ -3,15 +3,18 @@ class TicketsController < ApplicationController
 
   def create
     mapped_ticket = Mappers::TicketParamsMapper.new.call(ticket_params.dup.to_h)
-    
+
     ticket_attrs = mapped_ticket.except(:excavator)
     excavator_attrs = mapped_ticket.fetch(:excavator)
+
+    @ticket = Ticket.create(ticket_attrs)
+    @excavator = Excavator.create_with_attrs(ticket: @ticket, **excavator_attrs)
   end
 
   private
 
   def ticket_params
-    params.require(:ticket).permit(
+    params.permit(
       :RequestNumber,
       :SequenceNumber,
       :RequestType,
