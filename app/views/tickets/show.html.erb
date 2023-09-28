@@ -1,3 +1,21 @@
 <h1>
   Ticket <%= @ticket.request_number %>
 </h1>
+
+<div id="map" style="width: 99vw; height: 85vh;margni:0 auto"
+     data-polygon="<%= @ticket.digsite_info.coordinates[0].as_json %>"></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+  // Initialize the map
+    var map = L.map('map').setView([0, 0], 2);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Retrieve and plot the polygon data
+    //var polygonData = JSON.parse(document.getElementById('map').dataset.polygon);
+    //var polygon = L.polygon(polygonData).addTo(map);
+  });
+</script>
