@@ -5,6 +5,10 @@ class TicketsController < ApplicationController
     @tickets = Ticket.all
   end
 
+  def show
+    @ticket = Ticket.find(params[:id])
+  end
+
   def create
     mapped_ticket = Mappers::TicketParamsMapper.new.call(ticket_params.dup.to_h)
 

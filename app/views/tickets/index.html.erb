@@ -8,6 +8,7 @@
       <th>Excavator</th>
       <th>Primary SA code</th>
       <th>Additional SA codes</th>
+      <th></th>
     </thead>
     <tbody>
       <% @tickets.each do |t| %>
@@ -25,6 +26,9 @@
           </td>
           <td><%= t.primary_service_area_code %></td>
           <td><%= t.additional_service_area_codes.join(', ') %></td>
+          <td>
+            <%= link_to 'Show', ticket_path(t) %>
+          </td>
         </tr>
       <% end %>
     </tbody>
