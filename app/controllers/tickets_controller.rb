@@ -2,8 +2,10 @@ class TicketsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def create
-    @ticket = ticket_params
-    puts Mappers::TicketParamsMapper.new.call(@ticket.dup.to_h)
+    mapped_ticket = Mappers::TicketParamsMapper.new.call(ticket_params.dup.to_h)
+    
+    ticket_attrs = mapped_ticket.except(:excavator)
+    excavator_attrs = mapped_ticket.fetch(:excavator)
   end
 
   private
