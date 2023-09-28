@@ -6,6 +6,9 @@ gem "rails", github: "rails/rails", branch: "main"
 gem "pg", "~> 1.5"
 gem "puma", "~> 6.4"
 
+gem "dry-inflector", "~> 1.0"
+gem "dry-transformer", "~> 1.0"
+
 group :development, :test do
   gem "debug", platforms: %i[mri windows]
   gem "rspec-rails"
