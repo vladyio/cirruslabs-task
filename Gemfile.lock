@@ -160,6 +160,7 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.5.4)
+    prettier_print (1.2.1)
     psych (5.1.0)
       stringio
     puma (6.4.0)
@@ -218,8 +219,18 @@ GEM
     rubocop-performance (1.19.1)
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
+    ruby-lsp (0.10.1)
+      language_server-protocol (~> 3.17.0)
+      sorbet-runtime
+      syntax_tree (>= 6.1.1, < 7)
+      yarp (>= 0.11, < 0.12)
+    ruby-lsp-rails (0.2.5)
+      rails (>= 6.0)
+      ruby-lsp (>= 0.10.0, < 0.11.0)
+      sorbet-runtime (>= 0.5.9897)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
+    sorbet-runtime (0.5.11048)
     standard (1.31.1)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.0)
@@ -233,6 +244,8 @@ GEM
       lint_roller (~> 1.1)
       rubocop-performance (~> 1.19.0)
     stringio (3.0.9)
+    syntax_tree (6.2.0)
+      prettier_print (>= 1.2.0)
     thor (1.2.2)
     timeout (0.4.0)
     tzinfo (2.0.6)
@@ -242,6 +255,7 @@ GEM
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    yarp (0.11.0)
     zeitwerk (2.6.12)
 
 PLATFORMS
@@ -256,6 +270,7 @@ DEPENDENCIES
   puma (~> 6.4)
   rails!
   rspec (~> 3.12)
+  ruby-lsp-rails
   standard (~> 1.31)
 
 RUBY VERSION

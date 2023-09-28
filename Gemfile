@@ -13,5 +13,6 @@ end
 
 group :development do
   gem "error_highlight", ">= 0.4.0", platforms: [:ruby]
+  gem "ruby-lsp-rails"
   gem "standard", "~> 1.31"
 end
