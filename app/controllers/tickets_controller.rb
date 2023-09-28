@@ -1,6 +1,10 @@
 class TicketsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
+  def index
+    @tickets = Ticket.all
+  end
+
   def create
     mapped_ticket = Mappers::TicketParamsMapper.new.call(ticket_params.dup.to_h)
 
