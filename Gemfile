@@ -8,7 +8,7 @@ gem "puma", "~> 6.4"
 
 group :development, :test do
   gem "debug", platforms: %i[mri windows]
-  gem "rspec", "~> 3.12"
+  gem "rspec-rails"
 end
 
 group :development do

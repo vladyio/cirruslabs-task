@@ -189,10 +189,6 @@ GEM
     reline (0.3.8)
       io-console (~> 0.5)
     rexml (3.2.6)
-    rspec (3.12.0)
-      rspec-core (~> 3.12.0)
-      rspec-expectations (~> 3.12.0)
-      rspec-mocks (~> 3.12.0)
     rspec-core (3.12.2)
       rspec-support (~> 3.12.0)
     rspec-expectations (3.12.3)
@@ -201,6 +197,14 @@ GEM
     rspec-mocks (3.12.6)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
+    rspec-rails (6.0.3)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      railties (>= 6.1)
+      rspec-core (~> 3.12)
+      rspec-expectations (~> 3.12)
+      rspec-mocks (~> 3.12)
+      rspec-support (~> 3.12)
     rspec-support (3.12.1)
     rubocop (1.56.3)
       base64 (~> 0.1.1)
@@ -269,7 +273,7 @@ DEPENDENCIES
   pg (~> 1.5)
   puma (~> 6.4)
   rails!
-  rspec (~> 3.12)
+  rspec-rails
   ruby-lsp-rails
   standard (~> 1.31)
 
