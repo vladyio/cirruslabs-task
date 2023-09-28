@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: cirruslabs_task_development
+
+test:
+  <<: *default
+  database: cirruslabs_task_test
+
+production:
+  <<: *default
+  database: cirruslabs_task_production
+  username: cirruslabs_task
+  password: <%= ENV["CIRRUSLABS_TASK_DATABASE_PASSWORD"] %>
