@@ -2,24 +2,19 @@ default: &default
   adapter: postgis
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+  port: 5433
+  user: postgres
   schema_search_path: public
 
 development:
   <<: *default
-  host: localhost
-  port: 5433
-  user: postgres
   database: cirruslabs_task_development
 
 test:
   <<: *default
-  host: localhost
-  port: 5433
-  user: postgres
   database: cirruslabs_task_test
 
 production:
   <<: *default
-  database: cirruslabs_task_production
-  username: cirruslabs_task
-  password: <%= ENV["CIRRUSLABS_TASK_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
