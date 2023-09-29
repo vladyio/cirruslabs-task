@@ -1,10 +1,14 @@
+App URL: https://app-vypf.onrender.com/
+
 • **Ruby**: locally started with 3.3.0.preview2, but Render seems to not able to support it. So
 switched to 3.2.2
 
 • **Rails**: 7.0 (latest 7.2alpha is not compatible with `activerecord-postgis-adapter`)
 
-• **PostgreSQL**: latest 16 is not compatible with `postgis` binary. I used latest PostGIS container
-with PostgreSQL 16 in Docker locally for development
+• **PostgreSQL**: 15 (from Render.com).
+
+Latest PSQL 16 is not compatible with `postgis` standalone binary.
+I used the latest PostGIS container based on PostgreSQL 16 in Docker locally for development
 
 **Specs cover**:
 
