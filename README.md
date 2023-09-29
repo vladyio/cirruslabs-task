@@ -1,4 +1,5 @@
-• **Ruby**: 3.3.0.preview2
+• **Ruby**: locally started with 3.3.0.preview2, but Render seems to not able to support it. So
+switched to 3.2.2
 
 • **Rails**: 7.0 (latest 7.2alpha is not compatible with `activerecord-postgis-adapter`)
 
