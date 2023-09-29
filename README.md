@@ -1,6 +1,6 @@
 App URL: https://app-vypf.onrender.com/
 
-• **Ruby**: locally started with 3.3.0.preview2, but Render seems to not able to support it. So
+• **Ruby**: locally started with 3.3.0.preview2, but Render seems to not be able to support it. So
 switched to 3.2.2
 
 • **Rails**: 7.0 (latest 7.2alpha is not compatible with `activerecord-postgis-adapter`)
@@ -28,7 +28,7 @@ Gems for testing:
 > [!NOTE]
 > Incoming `POST` request is expected at the `/tickets` endpoint.
 
-JSON from request gets parsed & transformed with `Mappers::TicketParamsMapper`,
+JSON from request gets parsed & transformed with [`Mappers::TicketParamsMapper`](https://github.com/vladyio/cirruslabs-task/blob/main/lib/mappers/ticket_params_mapper.rb),
 which uses [dry-transformer](https://dry-rb.org/gems/dry-transformer/1.0/) and
 [dry-inflector](https://dry-rb.org/gems/dry-inflector/1.0/).
 
