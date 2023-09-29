@@ -17,4 +17,20 @@ RSpec.describe Ticket, type: :model do
       end
     end
   end
+
+  describe "associations" do
+    it "has one excavator" do
+      ticket = create(:ticket)
+      excavator = create(:excavator, ticket: ticket)
+
+      expect(ticket.excavator).to eq(excavator)
+    end
+
+    it "destroys associated excavator when deleted" do
+      ticket = create(:ticket)
+      create(:excavator, ticket: ticket)
+
+      expect { ticket.destroy }.to change(Excavator, :count).by(-1)
+    end
+  end
 end
