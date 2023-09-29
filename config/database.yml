@@ -20,5 +20,4 @@ test:
 
 production:
   <<: *default
-  adapter: postgis
-  url: <%= ENV['DATABASE_URL'] %>
+  url: url: <%= ENV.fetch("DATABASE_URL").gsub(/postgres/, 'postgis') %>
