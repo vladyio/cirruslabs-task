@@ -4,6 +4,22 @@
 
 • **PostgreSQL**: 14 (latest 16 is not compatible with `postgis` binary).
 
-I used PostgreSQL 16 in Docker locally for development
+I used latest PostGIS container with PostgreSQL 16 in Docker locally for development
 
 ---
+
+> [!NOTE]
+> Incoming `POST` request is expected at the `/tickets` endpoint.
+
+JSON from request gets parsed & transformed with `Mappers::TicketParamsMapper`,
+which uses [dry-transformer](https://dry-rb.org/gems/dry-transformer/1.0/) and
+[dry-inflector](https://dry-rb.org/gems/dry-inflector/1.0/).
+
+Then I split the resulting hash into `Ticket` attributes and `Excavator` attributes.
+
+To store `Excavator#address`, I implemented `Excavator#create_with_attrs` method,
+that accepts `ticket` and excavator attributes and joins all address parts into a single string and
+stores into the `address` field.
+
+> [!NOTE]
+> I've removed all unused folders, including `assets`, since it basically bloats the project structure
