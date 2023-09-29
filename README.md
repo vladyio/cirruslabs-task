@@ -2,9 +2,21 @@
 
 • **Rails**: 7.0 (latest 7.2alpha is not compatible with `activerecord-postgis-adapter`)
 
-• **PostgreSQL**: 14 (latest 16 is not compatible with `postgis` binary).
+• **PostgreSQL**: latest 16 is not compatible with `postgis` binary. I used latest PostGIS container
+with PostgreSQL 16 in Docker locally for development
 
-I used latest PostGIS container with PostgreSQL 16 in Docker locally for development
+**Specs cover**:
+
+- routes
+- models
+- controllers
+
+Gems for testing:
+
+- factory_bot_rails
+- faker
+- rails-controller-testing
+- rspec-rails
 
 ---
 
