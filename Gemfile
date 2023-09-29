@@ -16,6 +16,8 @@ gem "dry-transformer", "~> 1.0"
 
 group :development, :test do
   gem "debug", platforms: %i[mri windows]
+  gem "factory_bot_rails", "~> 6.2"
+  gem "faker", "~> 3.2"
   gem "rspec-rails"
 end
 
